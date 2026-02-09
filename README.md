@@ -106,10 +106,10 @@ TODO: Update based on your project
 TODO: Complete applicable items based on your project type
 
 - ### Editor
-   - [ ] Local-first design
-   - [ ] Draft handling
-   - [ ] Safe save/load
-   - [ ] Dynamic file naming
+   - [x] Local-first design
+   - [x] Draft handling
+   - [x] Safe save/load
+   - [x] Dynamic file naming
    - [ ] Markdown rendering (planned)
    - [ ] Search (planned)
 
@@ -118,16 +118,6 @@ TODO: Complete applicable items based on your project type
    - [ ] Hybrid search (keyword + vector)
    - [ ] On-device RAG
    - [ ] Model backend selection
-
----
-
-## 🔗 Repository Links
-
-TODO: Update with your repository structure
-
-1. [Main Repository](https://github.com/AOSSIE-Org/TODO)
-2. [Frontend](https://github.com/AOSSIE-Org/TODO/tree/main/frontend) (if separate)
-3. [Backend](https://github.com/AOSSIE-Org/TODO/tree/main/backend) (if separate)
 
 ---
 
@@ -157,10 +147,7 @@ smart-notes/
 ---
 
 ## 🔄 User Flow
-
-```
-img
-```
+<img width="719" height="713" alt="image" src="https://github.com/user-attachments/assets/c66c9d9e-86a7-4334-863c-4481da0680c3" />
 
 ### Key User Journeys
 
@@ -231,8 +218,6 @@ Thank you for considering contributing to this project! Contributions are highly
 
 ## ✨ Maintainers
 
-TODO: Add maintainer information
-
 - [Maintainer Name](https://github.com/username)
 - [Maintainer Name](https://github.com/username)
 
@@ -247,8 +232,8 @@ See the [LICENSE](LICENSE) file for details.
 
 ## 💪 Thanks To All Contributors
 
-Thanks a lot for spending your time helping TODO grow. Keep rocking 🥂
+Thanks a lot for spending your time helping Smart-Notes grow. Keep rocking 🥂
 
-[![Contributors](https://avatars.githubusercontent.com/u/181579022?s=400&v=4)](https://github.com/tani-dubey/)
+[![Contributors](https://contrib.rocks/image?repo=AOSSIE-Org/Smart-Notes)](https://github.com/AOSSIE-Org/Smart-Notes/graphs/contributors)
 
 © 2025 AOSSIE 

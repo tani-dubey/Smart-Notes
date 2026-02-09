@@ -48,21 +48,36 @@
 ---
 
 <div align="center">
-<h1>TODO: Project Name</h1>
+<h1>Smart Notes</h1>
 </div>
 
-[TODO](https://TODO.stability.nexus/) is a ... TODO: Project Description.
+[Smart Notes](https://github.com/tani-dubey/Smart-Notes) is a local-first, privacy-focused desktop application for personal knowledge management.
+It provides a markdown-based note editor with safe file persistence, draft handling, and dynamic titles, forming a solid foundation for future AI-powered semantic search and RAG features.
+
+The project prioritizes offline usage, user data ownership, and incremental feature development.
 
 ---
 
 ## 🚀 Features
 
-TODO: List your main features here:
+Core Editor (Current Prototype)
 
-- **Feature 1**: Description
-- **Feature 2**: Description
-- **Feature 3**: Description
-- **Feature 4**: Description
+- **📝 Markdown note editing**: raw text, no rendering yet
+- **💾 Explicit Save / Saved state** with dirty-tracking
+- **📄 Draft-based note creation**: 
+   - Auto-creates drafts on first typing
+   - Finalizes drafts on save
+- **🏷️ Dynamic note titles**: 
+   - Filename derived from first line of content
+   - Empty notes handled as `untitled.md`
+- **🔁 Safe file switching**: 
+   - Open, edit, and update multiple notes
+   - No accidental overwrites or data loss
+- **📂 Local filesystem storage**: 
+   - Notes stored as `.md` files on disk
+   - Fully offline by default
+
+   ⚠️ AI features (semantic search, embeddings, RAG) are planned and intentionally not included yet.
 
 ---
 
@@ -70,26 +85,19 @@ TODO: List your main features here:
 
 TODO: Update based on your project
 
-### Frontend
-- React / Next.js / Flutter / React Native
-- TypeScript
-- TailwindCSS
+### Desktop Application
+- **Electron** — cross-platform desktop shell
+- **HTML / CSS / JavaScript** — UI and editor logic
+- **Node.js (fs, path)** — local filesystem access
 
-### Backend
-- Flask / FastAPI / Node.js / Supabase
-- Database: PostgreSQL / SQLite / MongoDB
+### Storage
+- Local markdown files `(.md)`
+- No database, no cloud dependency
 
-### AI/ML (if applicable)
-- LangChain / LangGraph / LlamaIndex
-- Google Gemini / OpenAI / Anthropic Claude
-- Vector Database: Weaviate / Pinecone / Chroma
-- RAG / Prompt Engineering / Agent Frameworks
-
-### Blockchain (if applicable)
-- Solidity / solana / cardano / ergo Smart Contracts
-- Hardhat / Truffle / foundry
-- Web3.js / Ethers.js / Wagmi
-- OpenZeppelin / alchemy / Infura
+### AI/ML (Planned)
+- Ollama (local LLMs)
+- Embeddings + vector store (local)
+- Retrieval-Augmented Generation (RAG)
 
 ---
 
@@ -97,22 +105,19 @@ TODO: Update based on your project
 
 TODO: Complete applicable items based on your project type
 
-- [ ] **The protocol** (if applicable):
-   - [ ] has been described and formally specified in a paper.
-   - [ ] has had its main properties mathematically proven.
-   - [ ] has been formally verified.
-- [ ] **The smart contracts** (if applicable):
-   - [ ] were thoroughly reviewed by at least two knights of The Stable Order.
-   - [ ] were deployed to: [Add deployment details]
-- [ ] **The mobile app** (if applicable):
-   - [ ] has an _About_ page containing the Stability Nexus's logo and pointing to the social media accounts of the Stability Nexus.
-   - [ ] is available for download as a release in this repo.
-   - [ ] is available in the relevant app stores.
-- [ ] **The AI/ML components** (if applicable):
-   - [ ] LLM/model selection and configuration are documented.
-   - [ ] Prompts and system instructions are version-controlled.
-   - [ ] Content safety and moderation mechanisms are implemented.
-   - [ ] API keys and rate limits are properly managed.
+- ### Editor
+   - [ ] Local-first design
+   - [ ] Draft handling
+   - [ ] Safe save/load
+   - [ ] Dynamic file naming
+   - [ ] Markdown rendering (planned)
+   - [ ] Search (planned)
+
+- ### AI / ML (Planned)
+   - [ ] Local embedding pipeline
+   - [ ] Hybrid search (keyword + vector)
+   - [ ] On-device RAG
+   - [ ] Model backend selection
 
 ---
 
@@ -131,50 +136,46 @@ TODO: Update with your repository structure
 TODO: Add your system architecture diagram here
 
 ```
-[Architecture Diagram Placeholder]
+smart-notes/
+├─ app/
+│  ├─ index.html
+│  ├─ style.css
+│  └─ main.js
+|
+├─ notes/ (optional to have)
+│  └─ (your .md files go here)
+|
+├─ main.js (Entrypoint)
+├─ package.json
+└─ README.md
+
 ```
-
-You can create architecture diagrams using:
-- [Draw.io](https://draw.io)
-- [Excalidraw](https://excalidraw.com)
-- [Lucidchart](https://lucidchart.com)
-- [Mermaid](https://mermaid.js.org) (for code-based diagrams)
-
-Example structure to include:
-- Frontend components
-- Backend services
-- Database architecture
-- External APIs/services
-- Data flow between components
+### Planned Extension
+- Python backend for embeddings & RAG
+- Local IPC between Electron and backend
 
 ---
 
 ## 🔄 User Flow
 
-TODO: Add user flow diagrams showing how users interact with your application
-
 ```
-[User Flow Diagram Placeholder]
+![alt text](image.png)
 ```
 
 ### Key User Journeys
 
-TODO: Document main user flows:
+### User Journey: Create & Save a Note
+1. User opens the app
+2. Starts typing → draft is auto-created
+3. First line becomes the title
+4. Clicks Save
+5. Draft is finalized and stored as a markdown file
 
-1. **User Journey 1**: Description
-   - Step 1
-   - Step 2
-   - Step 3
-
-2. **User Journey 2**: Description
-   - Step 1
-   - Step 2
-   - Step 3
-
-3. **User Journey 3**: Description
-   - Step 1
-   - Step 2
-   - Step 3
+### User Journey: Edit Existing Note
+1. User clicks a note in the sidebar
+2. Content loads into editor
+3. User edits content
+4. Save updates the file safely
 
 ---
 
@@ -182,11 +183,8 @@ TODO: Document main user flows:
 
 ### Prerequisites
 
-TODO: List what developers need installed
-
-- Node.js 18+ / Python 3.9+ / Flutter SDK
-- npm / yarn / pnpm
-- [Any specific tools or accounts needed]
+- Node.js 18+
+- npm
 
 ### Installation
 
@@ -195,45 +193,21 @@ TODO: Provide detailed setup instructions
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/AOSSIE-Org/TODO.git
-cd TODO
+git clone https://github.com/AOSSIE-Org/SmartNotes.git
+cd SmartNotes
 ```
 
 #### 2. Install Dependencies
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-#### 3. Configure Environment Variables(.env.example)
-
-Create a `.env` file in the root directory:
-
-```env
-# Add your environment variables here
-API_KEY=your_api_key
-DATABASE_URL=your_database_url
-```
-
-#### 4. Run the Development Server
+#### 3. Run the app
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm start
 ```
-
-#### 5. Open your Browser
-
-Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
-
-For detailed setup instructions, please refer to our [Installation Guide](./docs/INSTALL_GUIDE.md) (if you have one).
 
 ---
 
@@ -275,6 +249,6 @@ See the [LICENSE](LICENSE) file for details.
 
 Thanks a lot for spending your time helping TODO grow. Keep rocking 🥂
 
-[![Contributors](https://contrib.rocks/image?repo=AOSSIE-Org/TODO)](https://github.com/AOSSIE-Org/TODO/graphs/contributors)
+[![Contributors](https://avatars.githubusercontent.com/u/181579022?s=400&v=4)](https://github.com/tani-dubey/)
 
 © 2025 AOSSIE 

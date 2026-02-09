@@ -159,7 +159,7 @@ smart-notes/
 ## 🔄 User Flow
 
 ```
-![alt text](image.png)
+img
 ```
 
 ### Key User Journeys

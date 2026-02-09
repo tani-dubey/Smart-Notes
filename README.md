@@ -83,8 +83,6 @@ Core Editor (Current Prototype)
 
 ## 💻 Tech Stack
 
-TODO: Update based on your project
-
 ### Desktop Application
 - **Electron** — cross-platform desktop shell
 - **HTML / CSS / JavaScript** — UI and editor logic
@@ -103,8 +101,6 @@ TODO: Update based on your project
 
 ## ✅ Project Checklist
 
-TODO: Complete applicable items based on your project type
-
 - ### Editor
    - [x] Local-first design
    - [x] Draft handling
@@ -122,8 +118,6 @@ TODO: Complete applicable items based on your project type
 ---
 
 ## 🏗️ Architecture Diagram
-
-TODO: Add your system architecture diagram here
 
 ```
 smart-notes/
